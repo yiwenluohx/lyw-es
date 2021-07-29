@@ -54,4 +54,6 @@ public class Product {
     @Field(type = FieldType.Keyword, index = false)
     private String images;
 
+    
+
 }
