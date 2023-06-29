@@ -4,6 +4,8 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 import lombok.ToString;
+import org.apache.tomcat.util.compat.TLS;
+import org.junit.After;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.elasticsearch.annotations.Document;
 import org.springframework.data.elasticsearch.annotations.Field;
@@ -54,6 +56,8 @@ public class Product {
     @Field(type = FieldType.Keyword, index = false)
     private String images;
 
-    
+
+
+
 
 }
