@@ -35,7 +35,11 @@ public class EsConfig {
         COMMON_OPTIONS = builder.build();
     }
 
-    // 注册到IOC中
+    /**
+     * 注册到IOC中
+     *
+     * @return {@link RestHighLevelClient}
+     */
     @Bean("restHighLevelClient")
     public RestHighLevelClient restHighLevelClient() {
         RestClientBuilder builder = null;

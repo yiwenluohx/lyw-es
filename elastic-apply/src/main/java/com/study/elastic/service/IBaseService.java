@@ -1,7 +1,6 @@
 package com.study.elastic.service;
 
 import com.alibaba.fastjson.JSONObject;
-import com.study.elastic.entity.GeneSnpData;
 import org.elasticsearch.index.query.BoolQueryBuilder;
 import org.springframework.data.domain.Pageable;
 
@@ -71,6 +70,7 @@ public interface IBaseService<T> {
      * @param index            索引库名称
      * @param pageable         分页对象
      * @param routing          路由
+     * @param clazz            转换对象类型
      * @param boolQueryBuilder 条件对象
      * @param showField        指定查询字段 可传空数组
      * @param shieldField      指定排除字段 可传空数组
@@ -78,7 +78,7 @@ public interface IBaseService<T> {
      * @param bl               true.正序 false.倒序
      * @return {@link List}
      */
-    List<T> search(String index, Pageable pageable, String routing, BoolQueryBuilder boolQueryBuilder,
+    List<T> search(String index, Pageable pageable, String routing, Class<T> clazz, BoolQueryBuilder boolQueryBuilder,
                    String[] showField, String[] shieldField, String orderField, boolean bl);
 
     /**
@@ -86,6 +86,7 @@ public interface IBaseService<T> {
      *
      * @param index            索引库名称
      * @param routing          路由
+     * @param clazz            转换对象类型
      * @param boolQueryBuilder 条件对象
      * @param showField        指定查询字段 可传空数组
      * @param shieldField      指定查询字段 可传空数组
@@ -94,7 +95,7 @@ public interface IBaseService<T> {
      * @param bl               排序规则 true.ack   false.desc
      * @return {@link List}
      */
-    List<T> searchByGroup(String index, String routing, BoolQueryBuilder boolQueryBuilder,
+    List<T> searchByGroup(String index, String routing, Class<T> clazz, BoolQueryBuilder boolQueryBuilder,
                           String[] showField, String[] shieldField, String groupField, String sortField,
                           boolean bl);
 
@@ -112,23 +113,25 @@ public interface IBaseService<T> {
      * 数据去重
      *
      * @param index            索引库的名称
+     * @param clazz            转换对象类型
      * @param boolQueryBuilder 条件对象
      * @param showField        指定查询字段 可传空数组
      * @param shieldField      指定查询字段 可传空数组
      * @param distinctField    去重字段
      * @return {@link List}<{@link T}>
      */
-    List<T> searchByDistinct(String index, BoolQueryBuilder boolQueryBuilder,
+    List<T> searchByDistinct(String index, Class<T> clazz, BoolQueryBuilder boolQueryBuilder,
                              String[] showField, String[] shieldField, String distinctField);
 
     /**
      * 保存、修改数据（固定字段对象）
      *
      * @param t       实体对象
+     * @param docId   文档id
      * @param index   索引库名称
      * @param routing 路由
      */
-    void saveByObject(T t, String index, String routing);
+    void saveByObject(T t, String docId, String index, String routing);
 
     /**
      * 保存、修改数据（不固定字段对象）
