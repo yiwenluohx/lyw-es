@@ -34,7 +34,7 @@ public class SpringDataESIndexTest {
     @Test
     public void deleteIndex() {
         //创建索引，系统初始化会自动创建索引
-        boolean flg = elasticsearchRestTemplate.deleteIndex(Product.class);
-        System.out.println("删除索引 = " + flg);
+//        boolean flg = elasticsearchRestTemplate.deleteIndex(Product.class);
+//        System.out.println("删除索引 = " + flg);
     }
 }

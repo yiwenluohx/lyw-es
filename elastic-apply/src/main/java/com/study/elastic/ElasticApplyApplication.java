@@ -3,6 +3,9 @@ package com.study.elastic;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
+/**
+ * @author luohx
+ */
 @SpringBootApplication
 public class ElasticApplyApplication {
 
