@@ -6,7 +6,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 /**
  * @author luohx
  */
-@SpringBootApplication
+@SpringBootApplication(scanBasePackages = {"com.study.elastic"})
 public class ElasticApplyApplication {
 
     public static void main(String[] args) {

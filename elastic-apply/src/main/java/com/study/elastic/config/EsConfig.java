@@ -56,9 +56,9 @@ public class EsConfig {
                 builder = RestClient.builder(new HttpHost(ipAddr, port, "http"));
             }
         }
-        CredentialsProvider credentialsProvider = new BasicCredentialsProvider();
-        credentialsProvider.setCredentials(AuthScope.ANY, new UsernamePasswordCredentials(account, password));
-        builder.setHttpClientConfigCallback(f -> f.setDefaultCredentialsProvider(credentialsProvider));
+//        CredentialsProvider credentialsProvider = new BasicCredentialsProvider();
+//        credentialsProvider.setCredentials(AuthScope.ANY, new UsernamePasswordCredentials(account, password));
+//        builder.setHttpClientConfigCallback(f -> f.setDefaultCredentialsProvider(credentialsProvider));
         RestHighLevelClient restClient = new RestHighLevelClient(builder);
         return restClient;
     }

@@ -1,6 +1,5 @@
 package com.study.elastic.entity;
 
-import com.alibaba.fastjson.annotation.JSONField;
 import com.fasterxml.jackson.annotation.JsonFormat;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.elasticsearch.annotations.DateFormat;
@@ -30,6 +29,10 @@ public class GeneSnpData {
      */
     @Field(type = FieldType.Keyword)
     private String file_id;
+
+    @Field(type = FieldType.Keyword)
+    private String crop_id;
+
     /**
      * 位置
      */
@@ -95,6 +98,24 @@ public class GeneSnpData {
      */
     public void setFile_id(String file_id) {
         this.file_id = file_id;
+    }
+
+    /**
+     * Gets the value of crop_id.
+     *
+     * @return the value of crop_id
+     */
+    public String getCrop_id() {
+        return crop_id;
+    }
+
+    /**
+     * Sets the crop_id. *
+     * <p>You can use getCrop_id() to get the value of crop_id</p>
+     * * @param crop_id crop_id
+     */
+    public void setCrop_id(String crop_id) {
+        this.crop_id = crop_id;
     }
 
     /**

@@ -50,9 +50,9 @@ import java.util.*;
  * @date: 2023/6/30 下午1:55
  * @menu es基础抽象操作service
  */
-public abstract class AbstractBaseService<T> implements IBaseService<T> {
+public abstract class BaseService<T> implements IBaseService<T> {
 
-    private Logger logger = LoggerFactory.getLogger(AbstractBaseService.class);
+    private Logger logger = LoggerFactory.getLogger(BaseService.class);
 
     @Resource
     RestHighLevelClient restLevelClient;
