@@ -6,15 +6,15 @@ spring:
     elasticsearch:
       client:
         reactive:
-#          # 配置es节点信息, (集群使用逗号分隔) 9200端口是http查询使用的, 9300集群使用, 这里我使用9200
-#          endpoints: 192.168.10.12:9200
-#          # 登录账号
-#          username: elastic
-#          # 登录密码
-#          password: A5GTgHEYm7m64uYW4AU5
-          # 配置es节点信息, (集群使用逗号分隔) 9200端口是http查询使用的, 9300集群使用, 这里我使用9200
-          endpoints: 127.0.0.1:9200
+          # （fat环境）配置es节点信息, (集群使用逗号分隔) 9200端口是http查询使用的, 9300集群使用, 这里我使用9200
+          endpoints: 192.168.10.12:9200
           # 登录账号
           username: elastic
           # 登录密码
-          password: luohxTest@
+          password: A5GTgHEYm7m64uYW4AU5
+#          # (本地es-7.16.1)配置es节点信息, (集群使用逗号分隔) 9200端口是http查询使用的, 9300集群使用, 这里我使用9200
+#          endpoints: 127.0.0.1:9200
+#          # 登录账号
+#          username: elastic
+#          # 登录密码
+#          password: luohxTest@
