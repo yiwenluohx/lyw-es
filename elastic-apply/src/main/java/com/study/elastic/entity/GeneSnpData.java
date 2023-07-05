@@ -30,6 +30,14 @@ public class GeneSnpData {
     @Field(type = FieldType.Keyword)
     private String file_id;
 
+    /**
+     * 文件名称
+     * analyzer ： 创建索引使用的分词策略
+     * searchAnalyzer ： 检索时使用的分词策略
+     */
+    @Field(type = FieldType.Text, fielddata = true, analyzer = "ik_max_word", searchAnalyzer = "ik_max_word")
+    private String file_name;
+
     @Field(type = FieldType.Keyword)
     private String crop_id;
 
@@ -98,6 +106,24 @@ public class GeneSnpData {
      */
     public void setFile_id(String file_id) {
         this.file_id = file_id;
+    }
+
+    /**
+     * Gets the value of file_name.
+     *
+     * @return the value of file_name
+     */
+    public String getFile_name() {
+        return file_name;
+    }
+
+    /**
+     * Sets the file_name. *
+     * <p>You can use getFile_name() to get the value of file_name</p>
+     * * @param file_name file_name
+     */
+    public void setFile_name(String file_name) {
+        this.file_name = file_name;
     }
 
     /**
